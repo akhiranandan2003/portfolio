@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Akhira Nandan Thota — Portfolio</title>
+  <meta name="description" content="Akhira Nandan Thota — Salesforce Developer & AI enthusiast. Apex, LWC, AI, Cloud, IoT projects." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#071024 0%,#071a2b 100%);color:#e6eef6}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:1000px;margin:40px auto;padding:24px}
+
+    /* header */
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+    .brand{display:flex;gap:16px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#0ea5a4,#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#012;box-shadow:0 6px 20px rgba(2,6,23,0.7)}
+    nav ul{display:flex;gap:14px;list-style:none;padding:0;margin:0}
+    nav a{padding:8px 12px;border-radius:8px;font-weight:600}
+    nav a:hover{background:var(--glass)}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:28px}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6);}
+    .title{font-size:28px;margin:0 0 6px}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;font-weight:600;color:var(--muted);font-size:13px}
+    .cta{margin-top:18px;display:flex;gap:10px}
+    .btn{background:linear-gradient(90deg,var(--accent),#7c3aed);padding:10px 14px;border-radius:10px;color:#022;display:inline-block;font-weight:700}
+    .outline{border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted)}
+
+    /* side card */
+    .side{background:var(--card);padding:20px;border-radius:12px}
+    .side h4{margin:0 0 6px}
+    .meta{color:var(--muted);font-size:14px}
+
+    /* sections */
+    section{margin-bottom:22px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;font-weight:600;color:var(--muted);font-size:13px}
+    .proj{display:grid;grid-template-columns:1fr;gap:12px}
+    .proj-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .proj-title{display:flex;justify-content:space-between;align-items:center}
+    .small{color:var(--muted);font-size:13px}
+
+    footer{text-align:center;color:var(--muted);font-size:14px;padding:20px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .hero-card, .side{order:0}
+      .grid-2{grid-template-columns:1fr}
+    }
+
+    /* floating resume */
+    .resume-link{position:fixed;right:20px;bottom:20px;background:linear-gradient(90deg,var(--accent),#7c3aed);padding:12px 14px;border-radius:12px;color:#012;font-weight:800;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="avatar">AN</div>
+        <div>
+          <div style="font-weight:800">Akhira Nandan Thota</div>
+          <div class="small">Salesforce Developer • AI & Cloud Enthusiast</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="hero-card">
+          <h1 class="title">Salesforce Developer Intern & AI / Cloud Enthusiast</h1>
+          <p class="subtitle">I build end-to-end solutions with Salesforce (Apex, LWC), cloud platforms, and data-driven AI tools. I enjoy automating workflows and making complex systems easy to use.</p>
+
+          <div class="tags">
+            <div class="tag">Apex</div>
+            <div class="tag">Lightning Web Components</div>
+            <div class="tag">Generative AI</div>
+            <div class="tag">Power BI</div>
+            <div class="tag">IoT / Arduino</div>
+            <div class="tag">Java / Python</div>
+          </div>
+
+          <div class="cta">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="outline" href="AKHIRANANDAN_Resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+
+        <aside class="side">
+          <h4>Contact</h4>
+          <div class="meta">📧 <a href="mailto:akhiranandanthota@gmail.com">akhiranandanthota@gmail.com</a></div>
+          <div class="meta">📱 8688485414</div>
+          <div style="height:12px"></div>
+          <h4>Links</h4>
+          <div class="meta"><a href="https://www.linkedin.com/in/akhira-nandan-thota-653b87290/" target="_blank">LinkedIn</a></div>
+          <div class="meta">(Add GitHub link)</div>
+          <div style="height:12px"></div>
+          <h4>Education</h4>
+          <div class="meta">B.Tech — CSE (IoT), Kakatiya Institute of Technology & Science (2022–26)</div>
+        </aside>
+      </div>
+
+      <section id="about">
+        <div class="card">
+          <h3>About Me</h3>
+          <p class="small">Dynamic Salesforce Developer Intern at Smartbridge with hands-on experience in Apex, Lightning Web Components, and building secure data models. Experienced in AI, Cloud platforms (AWS, GCP, Oracle Cloud), and data analytics using Power BI. I like solving real-world problems by combining cloud services, automation, and lightweight ML solutions.</p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="grid-2">
+          <div class="card">
+            <h3>Technical Skills</h3>
+            <div class="skills">
+              <div class="skill">Java</div>
+              <div class="skill">Python</div>
+              <div class="skill">C++</div>
+              <div class="skill">SQL</div>
+              <div class="skill">Apex</div>
+              <div class="skill">LWC</div>
+              <div class="skill">AWS</div>
+              <div class="skill">Google Cloud</div>
+              <div class="skill">Oracle Cloud</div>
+              <div class="skill">Power BI</div>
+              <div class="skill">Machine Learning</div>
+              <div class="skill">Generative AI</div>
+              <div class="skill">HTML / CSS / JS</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Certificates & Highlights</h3>
+            <ul class="small" style="margin:8px 0 0 18px">
+              <li>Salesforce Certified Agentforce Specialist</li>
+              <li>Oracle Cloud — Generative AI Professional Certificate</li>
+              <li>IBM SkillsBuild — AI & Data Science</li>
+              <li>NPTEL / GreeksforGreeks — Java</li>
+              <li>Power BI / Data Analytics internships</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h3>Projects</h3>
+        <div class="proj">
+          <div class="proj-card">
+            <div class="proj-title">
+              <div>
+                <strong>Automatic Fire-Fighting Robot</strong>
+                <div class="small">IoT • Arduino • C++ • Blynk • Sensors</div>
+              </div>
+              <div class="small">Role: Developer • Embedded control & IoT</div>
+            </div>
+            <p class="small">Built an autonomous robot that detects flame sources using IR sensors, navigates to the location and extinguishes fires using a water pump. Integrated Blynk for remote monitoring and manual override. Core logic implemented on Arduino in C++.</p>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-title">
+              <div>
+                <strong>HandsMen Threads — Salesforce CRM Strategy (Concept)</strong>
+                <div class="small">Salesforce • Service Cloud • Marketing Cloud • Commerce Cloud</div>
+              </div>
+              <div class="small">Role: Solution Architect • CRM Strategy</div>
+            </div>
+            <p class="small">Designed a hypothetical Salesforce implementation for a luxury e-commerce brand to improve personalization, customer 360, and targeted campaigns. Included apex-level automation, data modeling and service flows.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h3>Experience</h3>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Salesforce Developer Intern — Smartbridge</h4>
+            <p class="small">Automated business processes using Apex and LWC. Designed secure data models and completed Apex Specialist & Object Relationships superbadges.</p>
+          </div>
+          <div class="card">
+            <h4>AI & Cloud Intern — Edunet Foundation (AICTE)</h4>
+            <p class="small">Explored AI fundamentals on IBM Cloud, worked on cloud concepts for scalable solutions.</p>
+          </div>
+
+          <div class="card">
+            <h4>Data Analytics Intern — Vodafone Idea Foundation</h4>
+            <p class="small">Created Power BI dashboards and reports for business intelligence use-cases.</p>
+          </div>
+          <div class="card">
+            <h4>Frontend Dev Intern — Edunet Foundation</h4>
+            <p class="small">Built responsive web pages with HTML, CSS and JavaScript.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="card">
+          <h3>Contact Me</h3>
+          <p class="small">Interested in collaborating or hiring? Reach out.</p>
+          <p style="margin:8px 0"><strong>Email:</strong> <a href="mailto:akhiranandanthota@gmail.com">akhiranandanthota@gmail.com</a></p>
+          <p style="margin:8px 0"><strong>Phone:</strong> 8688485414</p>
+          <p style="margin:8px 0"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/akhira-nandan-thota-653b87290/" target="_blank">View profile</a></p>
+
+          <form onsubmit="sendMessage(event)" style="margin-top:12px">
+            <input id="name" placeholder="Your name" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-bottom:8px" required>
+            <input id="email" placeholder="Your email" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-bottom:8px" required>
+            <textarea id="message" placeholder="Message" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-bottom:8px" required></textarea>
+            <div style="display:flex;gap:8px">
+              <button class="btn" type="submit">Send</button>
+              <button type="button" class="outline" onclick="copyEmail()">Copy Email</button>
+            </div>
+            <div id="formMsg" style="margin-top:10px;color:var(--muted)"></div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      Built by Akhira Nandan • © <span id="year"></span>
+    </footer>
+
+  </div>
+
+  <a class="resume-link" href="AKHIRANANDAN_Resume.pdf" download>Download Resume</a>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    function sendMessage(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      // Basic mailto fallback — replace with serverless function / form handler for production
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+      window.location.href = `mailto:akhiranandanthota@gmail.com?subject=${subject}&body=${body}`;
+      document.getElementById('formMsg').innerText = 'Opening your email client — or copy the email and send a message.';
+    }
+
+    function copyEmail(){
+      navigator.clipboard && navigator.clipboard.writeText('akhiranandanthota@gmail.com');
+      document.getElementById('formMsg').innerText = 'Email copied to clipboard.';
+    }
+  </script>
+</body>
+</html>
