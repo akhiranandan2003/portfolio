@@ -29,12 +29,12 @@ const skills: SkillBubble[] = [
   { name: "SOQL", size: "sm", category: "tech" },
   { name: "Pandas", size: "md", category: "db" },
   { name: "NumPy", size: "sm", category: "db" },
+  { name: "MongoDB", size: "md", category: "db" },
   { name: "Git", size: "md", category: "tool" },
   { name: "OCI", size: "sm", category: "tool" },
   { name: "GCP", size: "sm", category: "tool" },
   { name: "IBM Cloud", size: "sm", category: "tool" },
-  { name: "Power BI", size: "md", category: "analytics" },
-  { name: "EDA", size: "sm", category: "analytics" }
+
 ];
 
 const SkillsSection = () => {
