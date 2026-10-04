@@ -1,4 +1,3 @@
-
 import { useRef, useState, useEffect } from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -18,24 +17,6 @@ const projects: Project[] = [
     description: "AI-powered visa eligibility screening system using Retrieval-Augmented Generation (RAG), integrating LangChain with the Google Gemini API and semantic document retrieval for accurate, rule-validated eligibility assessments.",
     githubUrl: "https://github.com/akhiranandan2003/ai_swift_visa_screening_test",
     tags: ["RAG", "LangChain", "Gemini API"]
-  },
-  {
-    title: "Customer Churn Prediction",
-    description: "Customer churn prediction models built with Logistic Regression and Random Forest, covering data cleaning, EDA, feature engineering, and model evaluation to support retention strategies.",
-    githubUrl: "https://github.com/akhiranandan2003/Customer-Churn-Prediction",
-    tags: ["Machine Learning", "Python", "EDA"]
-  },
-  {
-    title: "HandsMen Threads CRM Solution",
-    description: "Salesforce CRM solution streamlining customer and service management workflows, with custom objects, automation, Lightning Web Components (LWC), and optimized SOQL queries.",
-    githubUrl: "https://github.com/akhiranandan2003/HandsmenThreadproject",
-    tags: ["Salesforce", "Apex", "LWC"]
-  },
-  {
-    title: "Social Media Platform",
-    description: "Full-stack social media application built on the MERN stack with authentication, post management, likes, comments, and modular middleware-based backend architecture.",
-    githubUrl: "https://github.com/akhiranandan2003/social-media-app",
-    tags: ["MERN", "React", "MongoDB"]
   },
   {
     title: "Arduino Based Fire Fighting Robot",
