@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website built using **Vite + React + TailwindCSS**.  
 This showcases my journey as a **Computer Science Undergraduate**, **AI & Machine Learning Enthusiast**, and **Salesforce Developer**.
 
-🌐 **Live Demo**: [https://akhiranandan.tech](https://akhiranandan.tech)  
+🌐 **Live Demo**: [https://thota-akhira-nandan-portfolio.vercel.app/](https://thota-akhira-nandan-portfolio.vercel.app/)  
 📄 **Resume**: [Download PDF](/Akhira_Nandan_Thota_Resume.pdf)
 
 ---
