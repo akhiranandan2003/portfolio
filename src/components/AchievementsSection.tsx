@@ -23,36 +23,35 @@ const AchievementsSection = () => {
     <section id="achievements" className="section-container">
       <h2 className="section-title text-center">Achievements</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
         {achievements.map((achievement, index) => (
-          <Card key={index} className="h-full card-hover">
+          <Card key={index} className="h-full min-h-[300px] card-hover">
             <CardHeader>
-              <CardTitle className="text-xl">{achievement.title}</CardTitle>
+              <CardTitle className="text-xl leading-tight">
+                {achievement.title}
+              </CardTitle>
             </CardHeader>
-            <CardContent>
+
+            <CardContent className="flex flex-col h-full">
               <p className="text-muted-foreground mb-3">
                 {achievement.organization}
               </p>
-              <p className="text-muted-foreground mb-4">
+
+              <p className="text-muted-foreground mb-6 leading-relaxed">
                 {achievement.description}
               </p>
-              <div className="mb-4 overflow-hidden rounded-lg border bg-muted/20">
-                <img
-                  src={achievement.certificateUrl}
-                  alt={`${achievement.title} certificate`}
-                  className="w-full h-48 object-contain bg-white"
-                  loading="lazy"
-                />
+
+              <div className="mt-auto">
+                <Button variant="secondary" size="sm" asChild>
+                  <a
+                    href={achievement.certificateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Preview Certificate →
+                  </a>
+                </Button>
               </div>
-              <Button variant="secondary" size="sm" asChild>
-                <a
-                  href={achievement.certificateUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Certificate
-                </a>
-              </Button>
             </CardContent>
           </Card>
         ))}
