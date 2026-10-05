@@ -33,28 +33,28 @@ const HeroSection = () => {
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/akhira-nandan-thota-653b87290/",
-      icon: <FaLinkedin className="text-lg text-cyan-400" />,
+      icon: <FaLinkedin className="text-lg text-primary" />,
       tooltip: "View LinkedIn",
       external: true,
     },
     {
       label: "Mail",
       href: "mailto:akhiranandanthota@gmail.com",
-      icon: <MdEmail className="text-lg text-rose-400" />,
+      icon: <MdEmail className="text-lg text-rose-500" />,
       tooltip: "Mail me",
       external: false,
     },
     {
       label: "Call",
       href: "tel:+918688485414",
-      icon: <FiPhone className="text-lg text-emerald-400" />,
+      icon: <FiPhone className="text-lg text-emerald-500" />,
       tooltip: "Call me",
       external: false,
     },
     {
       label: "GitHub",
       href: "https://github.com/akhiranandan2003",
-      icon: <FaGithub className="text-lg text-slate-200" />,
+      icon: <FaGithub className="text-lg text-slate-700" />,
       tooltip: "See my GitHub",
       external: true,
     },
@@ -66,7 +66,7 @@ const HeroSection = () => {
       className="min-h-screen flex flex-col items-center justify-center py-16 px-4 bg-background text-center"
     >
       <motion.div
-        className="w-40 h-40 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-border shadow-2xl shadow-primary/10 mb-6 animate-float"
+        className="w-40 h-40 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/15 mb-6 animate-float"
         initial={{ opacity: 0, y: -30 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
