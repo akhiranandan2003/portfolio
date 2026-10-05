@@ -64,82 +64,85 @@ const certifications: Certification[] = [
 const CertificationCard = ({ certification, index }: { certification: Certification; index: number }) => {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Making animation repeatable when element re-enters viewport
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.2 }
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.15 }
     );
-    
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-    
+
+    if (cardRef.current) observer.observe(cardRef.current);
+
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
+      if (cardRef.current) observer.unobserve(cardRef.current);
     };
-  }, [index]);
-  
+  }, []);
+
   return (
-    <motion.div 
+    <motion.div
       ref={cardRef}
       initial={{ opacity: 0, y: 20 }}
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: false }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
     >
-      {certification.url ? (
-        <Card className="w-full card-hover gradient-bg group overflow-hidden">
-          <div className="h-[170px] w-full bg-white overflow-hidden border-b">
-            {certification.url.startsWith("https://drive.google.com/") ? (
-              <iframe
-                src={certification.url}
-                title={certification.title}
-                className="w-full h-full"
-                allow="autoplay"
-              />
-            ) : certification.url.toLowerCase().endsWith(".pdf") ? (
-              <iframe
-                src={certification.url}
-                title={certification.title}
-                className="w-full h-full"
-              />
-            ) : (
-              <img
-                src={certification.url}
-                alt={certification.title}
-                className="w-full h-full object-contain"
-              />
-            )}
+      <Card className="w-full h-[420px] card-hover gradient-bg group overflow-hidden flex flex-col">
+        {/* Consistent certificate preview area for every card */}
+        <div className="h-[210px] w-full shrink-0 bg-white border-b overflow-hidden">
+          {certification.url?.startsWith("https://drive.google.com/") ? (
+            <iframe
+              src={certification.url}
+              title={certification.title}
+              className="w-full h-full border-0 pointer-events-none"
+              scrolling="no"
+              loading="lazy"
+              allow="autoplay"
+            />
+          ) : certification.url?.toLowerCase().endsWith(".pdf") ? (
+            <iframe
+              src={certification.url}
+              title={certification.title}
+              className="w-full h-full border-0 pointer-events-none"
+              scrolling="no"
+              loading="lazy"
+            />
+          ) : certification.url ? (
+            <img
+              src={certification.url}
+              alt={certification.title}
+              className="w-full h-full object-contain p-2"
+              loading="lazy"
+            />
+          ) : (
+            <div className="h-full flex items-center justify-center text-5xl">
+              {certification.icon}
+            </div>
+          )}
+        </div>
+
+        {/* Consistent information and action area */}
+        <CardContent className="flex flex-1 flex-col items-center justify-between text-center p-4">
+          <div className="flex flex-col items-center">
+            <div className="text-2xl mb-2">{certification.icon}</div>
+            <h3 className="font-medium leading-tight line-clamp-2">
+              {certification.title}
+            </h3>
+            <p className="text-sm text-muted-foreground mt-2">
+              {certification.issuer}
+            </p>
           </div>
-          <CardContent className="flex flex-col items-center justify-center p-4">
-            <div className="text-3xl mb-2">{certification.icon}</div>
-            <h3 className="font-medium text-center">{certification.title}</h3>
-            <p className="text-sm text-muted-foreground text-center mb-3">{certification.issuer}</p>
+
+          {certification.url && (
             <a
               href={certification.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
             >
               Preview Certificate →
             </a>
-          </CardContent>
-        </Card>
-      ) : (
-        <Card className="w-full h-[200px] card-hover gradient-bg group">
-          <CardContent className="flex flex-col items-center justify-center h-full p-6">
-            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{certification.icon}</div>
-            <h3 className="font-medium text-center group-hover:text-primary transition-colors">{certification.title}</h3>
-            <p className="text-sm text-muted-foreground text-center">{certification.issuer}</p>
-          </CardContent>
-        </Card>
-      )}
+          )}
+        </CardContent>
+      </Card>
     </motion.div>
   );
 };
@@ -179,7 +182,7 @@ const CertificationsSection = () => {
         Certifications
       </motion.h2>
       
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         {certifications.map((certification, index) => (
           <CertificationCard key={index} certification={certification} index={index} />
         ))}
