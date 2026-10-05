@@ -25,12 +25,6 @@ const projects: Project[] = [
     githubUrl: "https://github.com/akhiranandan2003/Arduino-Based-Fire-Fighting-Robot",
     tags: ["Arduino", "Robotics", "IoT"]
   },
-  {
-    title: "Personal Developer Portfolio",
-    description: "Responsive developer portfolio showcasing my software engineering skills, projects, internships, certifications, achievements, and technical experience.",
-    githubUrl: "https://github.com/akhiranandan2003/portfolio",
-    tags: ["React", "TypeScript", "Tailwind CSS"]
-  }
 ];
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
