@@ -85,48 +85,16 @@ const CertificationCard = ({ certification, index }: { certification: Certificat
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
     >
-      <Card className="w-full h-[420px] card-hover gradient-bg group overflow-hidden flex flex-col">
-        {/* Consistent certificate preview area for every card */}
-        <div className="h-[210px] w-full shrink-0 bg-white border-b overflow-hidden">
-          {certification.url?.startsWith("https://drive.google.com/") ? (
-            <iframe
-              src={certification.url}
-              title={certification.title}
-              className="w-full h-full border-0 pointer-events-none"
-              scrolling="no"
-              loading="lazy"
-              allow="autoplay"
-            />
-          ) : certification.url?.toLowerCase().endsWith(".pdf") ? (
-            <iframe
-              src={certification.url}
-              title={certification.title}
-              className="w-full h-full border-0 pointer-events-none"
-              scrolling="no"
-              loading="lazy"
-            />
-          ) : certification.url ? (
-            <img
-              src={certification.url}
-              alt={certification.title}
-              className="w-full h-full object-contain p-2"
-              loading="lazy"
-            />
-          ) : (
-            <div className="h-full flex items-center justify-center text-5xl">
+      <Card className="w-full h-[260px] card-hover gradient-bg group">
+        <CardContent className="flex flex-col items-center justify-between h-full text-center p-6">
+          <div className="flex flex-col items-center">
+            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
               {certification.icon}
             </div>
-          )}
-        </div>
-
-        {/* Consistent information and action area */}
-        <CardContent className="flex flex-1 flex-col items-center justify-between text-center p-4">
-          <div className="flex flex-col items-center">
-            <div className="text-2xl mb-2">{certification.icon}</div>
-            <h3 className="font-medium leading-tight line-clamp-2">
+            <h3 className="font-medium leading-tight">
               {certification.title}
             </h3>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-sm text-muted-foreground mt-3">
               {certification.issuer}
             </p>
           </div>
