@@ -98,10 +98,11 @@ const HeroSection = () => {
         <Typewriter
           options={{
             strings: [
-              "Computer Science Undergraduate",
+              "Software Engineer",
+              "Computer Science & Engineering Graduate",
               "AI & Machine Learning Enthusiast",
-              "Salesforce Developer",
-              "Full Stack Developer"
+              "Full Stack Developer",
+              "Salesforce Developer"
             ],
             autoStart: true,
             loop: true,
@@ -117,7 +118,7 @@ const HeroSection = () => {
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.6, duration: 0.5 }}
       >
-        Computer Science undergraduate with internship experience in Artificial Intelligence, Machine Learning, Data Science, Salesforce, and Software Development, passionate about building intelligent, data-driven software solutions.
+        Computer Science & Engineering graduate and aspiring Software Engineer with internship experience in Artificial Intelligence, Machine Learning, Data Science, Salesforce, and Software Development, passionate about building intelligent, scalable, and data-driven software solutions.
       </motion.p>
 
       {/* Resume + LinkedIn Buttons */}
