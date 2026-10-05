@@ -6,11 +6,21 @@ import { motion } from 'framer-motion';
 interface Certification {
   title: string;
   issuer: string;
-  url: string;
+  url?: string;
   icon: string;
 }
 
 const certifications: Certification[] = [
+  {
+    title: "AI Skills Passport",
+    issuer: "EY & Microsoft",
+    icon: "🤖"
+  },
+  {
+    title: "Python 101 for Data Science (PY0101EN)",
+    issuer: "IBM / Cognitive Class",
+    icon: "🐍"
+  },
   {
     title: "Salesforce Certified Agentforce Specialist",
     issuer: "Salesforce",
@@ -81,24 +91,34 @@ const CertificationCard = ({ certification, index }: { certification: Certificat
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: false }}
     >
-      <a 
-        href={certification.url} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="block h-[200px]"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <Card className="w-full h-full card-hover gradient-bg group">
+      {certification.url ? (
+        <a 
+          href={certification.url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block h-[200px]"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Card className="w-full h-full card-hover gradient-bg group">
+            <CardContent className="flex flex-col items-center justify-center h-full p-6">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{certification.icon}</div>
+              <h3 className="font-medium text-center group-hover:text-primary transition-colors">{certification.title}</h3>
+              <p className="text-sm text-muted-foreground text-center">{certification.issuer}</p>
+              <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-primary">
+                View credential →
+              </div>
+            </CardContent>
+          </Card>
+        </a>
+      ) : (
+        <Card className="w-full h-[200px] card-hover gradient-bg group">
           <CardContent className="flex flex-col items-center justify-center h-full p-6">
             <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{certification.icon}</div>
             <h3 className="font-medium text-center group-hover:text-primary transition-colors">{certification.title}</h3>
             <p className="text-sm text-muted-foreground text-center">{certification.issuer}</p>
-            <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-primary">
-              View credential →
-            </div>
           </CardContent>
         </Card>
-      </a>
+      )}
     </motion.div>
   );
 };
