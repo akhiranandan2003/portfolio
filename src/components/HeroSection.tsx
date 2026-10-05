@@ -33,28 +33,28 @@ const HeroSection = () => {
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/akhira-nandan-thota-653b87290/",
-      icon: <FaLinkedin className="text-lg text-blue-600" />,
+      icon: <FaLinkedin className="text-lg text-cyan-400" />,
       tooltip: "View LinkedIn",
       external: true,
     },
     {
       label: "Mail",
       href: "mailto:akhiranandanthota@gmail.com",
-      icon: <MdEmail className="text-lg text-red-500" />,
+      icon: <MdEmail className="text-lg text-rose-400" />,
       tooltip: "Mail me",
       external: false,
     },
     {
       label: "Call",
       href: "tel:+918688485414",
-      icon: <FiPhone className="text-lg text-green-600" />,
+      icon: <FiPhone className="text-lg text-emerald-400" />,
       tooltip: "Call me",
       external: false,
     },
     {
       label: "GitHub",
       href: "https://github.com/akhiranandan2003",
-      icon: <FaGithub className="text-lg text-gray-800" />,
+      icon: <FaGithub className="text-lg text-slate-200" />,
       tooltip: "See my GitHub",
       external: true,
     },
@@ -63,11 +63,10 @@ const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col items-center justify-center py-16 px-4 bg-white dark:bg-gray-900 text-center"
+      className="min-h-screen flex flex-col items-center justify-center py-16 px-4 bg-background text-center"
     >
-      {/* Profile Image with Animation */}
       <motion.div
-        className="w-40 h-40 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-white shadow-xl mb-6 animate-float"
+        className="w-40 h-40 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-border shadow-2xl shadow-primary/10 mb-6 animate-float"
         initial={{ opacity: 0, y: -30 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
@@ -79,18 +78,17 @@ const HeroSection = () => {
         />
       </motion.div>
 
-      {/* Intro Text with Typewriter Effect */}
       <motion.h1
-        className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+        className="text-4xl sm:text-5xl font-bold text-foreground mb-4"
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Hi, I am <span className="text-blue-600">Akhira Nandan Thota</span>
+        Hi, I am <span className="gradient-text">Akhira Nandan Thota</span>
       </motion.h1>
 
       <motion.div
-        className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 mb-6 min-h-[3rem]"
+        className="text-2xl sm:text-3xl text-muted-foreground mb-6 min-h-[3rem]"
         initial={{ opacity: 0 }}
         animate={isVisible ? { opacity: 1 } : {}}
         transition={{ delay: 0.4, duration: 0.5 }}
@@ -113,7 +111,7 @@ const HeroSection = () => {
       </motion.div>
 
       <motion.p
-        className="max-w-2xl text-gray-600 dark:text-gray-400 mb-8 text-lg"
+        className="max-w-2xl text-muted-foreground mb-8 text-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.6, duration: 0.5 }}
@@ -121,7 +119,6 @@ const HeroSection = () => {
         Computer Science & Engineering graduate and aspiring Software Engineer with internship experience in Artificial Intelligence, Machine Learning, Data Science, Salesforce, and Software Development, passionate about building intelligent, scalable, and data-driven software solutions.
       </motion.p>
 
-      {/* Resume + LinkedIn Buttons */}
       <motion.div
         className="flex gap-4 justify-center"
         initial={{ opacity: 0, y: 20 }}
@@ -145,13 +142,12 @@ const HeroSection = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Linkedin className="mr-2 h-4 w-4 text-blue-600" />
+            <Linkedin className="mr-2 h-4 w-4 text-cyan-400" />
             LinkedIn
           </a>
         </Button>
       </motion.div>
 
-      {/* Contact Icons */}
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 justify-items-center mt-8"
         initial={{ opacity: 0, y: 20 }}
@@ -173,7 +169,7 @@ const HeroSection = () => {
                   rel={button.external ? "noopener noreferrer" : undefined}
                   aria-label={button.tooltip}
                 >
-                  <button className="flex items-center gap-2 px-4 py-2 rounded-md shadow-md bg-white hover:bg-gray-100 text-sm transition-colors duration-300">
+                  <button className="flex items-center gap-2 px-4 py-2 rounded-md shadow-md bg-card border border-border hover:bg-muted text-sm transition-colors duration-300">
                     {button.icon}
                     {button.label}
                   </button>
