@@ -1,13 +1,13 @@
 import { useRef, useState, useEffect } from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
 interface Project {
   title: string;
   description: string;
   githubUrl: string;
-  linkedInUrl?: string;
+  liveUrl?: string;
   tags: string[];
 }
 
@@ -16,6 +16,7 @@ const projects: Project[] = [
     title: "SwiftVisa – AI Visa Eligibility Screening Agent",
     description: "AI-powered visa eligibility screening system using Retrieval-Augmented Generation (RAG), integrating LangChain with the Google Gemini API and semantic document retrieval for accurate, rule-validated eligibility assessments.",
     githubUrl: "https://github.com/akhiranandan2003/ai-powered-visa-eligibility-screening",
+    liveUrl: "https://ai-visa-eligibility-screening.onrender.com",
     tags: ["RAG", "LangChain", "Gemini API"]
   },
   {
@@ -23,6 +24,13 @@ const projects: Project[] = [
     description: "Autonomous fire-fighting robot integrating flame sensors, Arduino Uno, motor drivers, and water pump modules with sensor-based navigation and automatic suppression logic.",
     githubUrl: "https://github.com/akhiranandan2003/Arduino-Based-Fire-Fighting-Robot",
     tags: ["Arduino", "Robotics", "IoT"]
+  },
+  {
+    title: "Personal Developer Portfolio",
+    description: "Responsive developer portfolio showcasing my software engineering skills, projects, internships, certifications, achievements, and technical experience.",
+    githubUrl: "https://github.com/akhiranandan2003/portfolio",
+    liveUrl: "https://akhiranandan.tech",
+    tags: ["React", "TypeScript", "Tailwind CSS"]
   }
 ];
 
@@ -86,11 +94,11 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </a>
           </Button>
           
-          {project.linkedInUrl && (
+          {project.liveUrl && (
             <Button variant="outline" size="sm" className="group" asChild>
-              <a href={project.linkedInUrl} target="_blank" rel="noopener noreferrer">
-                <Linkedin className="mr-2 h-4 w-4 group-hover:text-blue-600 transition-colors" />
-                LinkedIn
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-4 w-4 transition-colors" />
+                Live Demo
               </a>
             </Button>
           )}
