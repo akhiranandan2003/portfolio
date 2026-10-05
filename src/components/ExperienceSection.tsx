@@ -50,21 +50,21 @@ const ExperienceCard = ({ title, company, linkedInUrl, certificateUrl, index }: 
         </CardContent>
 
         {(certificateUrl || linkedInUrl) && (
-          <CardFooter className="flex flex-col sm:flex-row gap-2 pt-0">
+          <CardFooter className="pt-0 flex flex-wrap gap-2 items-center">
             {certificateUrl && (
-              <Button variant="default" size="sm" className="w-full sm:w-auto" asChild>
+              <Button variant="default" size="sm" className="flex-1 min-w-[160px] sm:flex-none justify-center" asChild>
                 <a href={certificateUrl} target="_blank" rel="noopener noreferrer">
-                  <FileText className="mr-2 h-4 w-4" />
-                  Preview Certificate
+                  <FileText className="mr-2 h-4 w-4 shrink-0" />
+                  <span>Preview Certificate</span>
                 </a>
               </Button>
             )}
 
             {linkedInUrl && (
-              <Button variant="outline" size="sm" className="w-full sm:w-auto" asChild>
+              <Button variant="outline" size="sm" className="flex-1 min-w-[130px] sm:flex-none justify-center" asChild>
                 <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  LinkedIn Post
+                  <ExternalLink className="mr-2 h-4 w-4 shrink-0" />
+                  <span>LinkedIn Post</span>
                 </a>
               </Button>
             )}
