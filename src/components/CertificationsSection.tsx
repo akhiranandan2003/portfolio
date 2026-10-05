@@ -85,8 +85,8 @@ const CertificationCard = ({ certification, index }: { certification: Certificat
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
     >
-      <Card className="w-full h-[260px] card-hover gradient-bg group">
-        <CardContent className="flex flex-col items-center justify-between h-full text-center p-6">
+      <Card className="w-full h-[260px] card-hover gradient-bg group relative overflow-hidden">
+        <CardContent className="flex flex-col items-center justify-center h-full text-center p-6">
           <div className="flex flex-col items-center">
             <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
               {certification.icon}
@@ -104,9 +104,12 @@ const CertificationCard = ({ certification, index }: { certification: Certificat
               href={certification.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+              aria-label={`View credential for ${certification.title}`}
+              className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200"
             >
-              Preview Certificate →
+              <span className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md">
+                View Credential →
+              </span>
             </a>
           )}
         </CardContent>
@@ -126,11 +129,11 @@ const CertificationsSection = () => {
       },
       { threshold: 0.2 }
     );
-    
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -140,7 +143,7 @@ const CertificationsSection = () => {
 
   return (
     <section id="certifications" ref={sectionRef} className="section-container">
-      <motion.h2 
+      <motion.h2
         className="section-title text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
@@ -149,7 +152,7 @@ const CertificationsSection = () => {
       >
         Certifications
       </motion.h2>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         {certifications.map((certification, index) => (
           <CertificationCard key={index} certification={certification} index={index} />
