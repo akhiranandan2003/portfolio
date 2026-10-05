@@ -8,13 +8,16 @@ const AchievementsSection = () => (
     <h2 className="section-title text-center">Achievements</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
       {achievements.map((achievement,index)=>(
-        <Card key={index} className="h-full min-h-[300px] card-hover group">
+        <Card key={index} className="relative h-full min-h-[300px] card-hover group overflow-hidden">
           <CardHeader><CardTitle className="text-xl leading-tight">{achievement.title}</CardTitle></CardHeader>
           <CardContent className="flex flex-col h-full">
             <p className="text-muted-foreground mb-3">{achievement.organization}</p>
             <p className="text-muted-foreground mb-6 leading-relaxed">{achievement.description}</p>
-            <div className="mt-auto flex justify-end"><a href={achievement.certificateUrl} target="_blank" rel="noopener noreferrer" className="min-h-11 inline-flex items-center px-2 text-xs text-muted-foreground/80 opacity-100 sm:opacity-0 sm:translate-y-1 sm:pointer-events-none transition-all duration-200 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 sm:group-hover:pointer-events-auto focus:opacity-100 focus:translate-y-0 focus:pointer-events-auto">View Credential →</a></div>
           </CardContent>
+          <a href={achievement.certificateUrl} target="_blank" rel="noopener noreferrer" aria-label={`View credential for ${achievement.title}`}
+             className="absolute bottom-4 right-4 z-10 inline-flex items-center px-2 py-1 text-xs text-muted-foreground bg-background/90 rounded-md shadow-sm opacity-0 translate-y-1 pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto">
+            View Credential →
+          </a>
         </Card>
       ))}
     </div>
