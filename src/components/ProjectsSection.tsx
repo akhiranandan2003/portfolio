@@ -16,7 +16,7 @@ const projects: Project[] = [
     title: "SwiftVisa – AI Visa Eligibility Screening Agent",
     description: "AI-powered visa eligibility screening system using Retrieval-Augmented Generation (RAG), integrating LangChain with the Google Gemini API and semantic document retrieval for accurate, rule-validated eligibility assessments.",
     githubUrl: "https://github.com/akhiranandan2003/ai-powered-visa-eligibility-screening",
-    liveUrl: "https://ai-visa-eligibility-screening.onrender.com",
+    liveUrl: "https://akhiranandan2003.github.io/ai-powered-visa-eligibility-screening/",
     tags: ["RAG", "LangChain", "Gemini API"]
   },
   {
