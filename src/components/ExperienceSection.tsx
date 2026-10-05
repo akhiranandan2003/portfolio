@@ -150,6 +150,7 @@ const ExperienceSection = () => {
         <ExperienceCard 
           title="Java Programming Intern" 
           company="KITSW — CSE (Networks) & C-PRE" 
+          certificateUrl="https://drive.google.com/file/d/1OsLZFBO_TYbHGvpLT4AL4mMVkpSRG2lt/view?usp=drive_link"
           index={7}
         />
       </div>
