@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const achievements = [
   {
@@ -6,12 +7,14 @@ const achievements = [
     organization: "Kakatiya Institute of Technology & Science, Warangal",
     description:
       "Participated in the Internal Hackathon for Smart India Hackathon (SIH-2023) on September 8, 2023. Presented a solution on the Tourism theme addressing Problem Statement SIH1486.",
+    certificateUrl: "/achievements/SIH_2023_Certificate.jpg",
   },
   {
     title: "Sumshodini’22 — WARTECH",
     organization: "Kakatiya Institute of Technology & Science, Warangal",
     description:
       "Participated in WARTECH during Sumshodini’22, a national-level technical symposium, conducted on November 18–19, 2022.",
+    certificateUrl: "/achievements/Sumshodini_WARTECH_Certificate.jpg",
   },
 ];
 
@@ -30,9 +33,18 @@ const AchievementsSection = () => {
               <p className="text-muted-foreground mb-3">
                 {achievement.organization}
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-4">
                 {achievement.description}
               </p>
+              <Button variant="secondary" size="sm" asChild>
+                <a
+                  href={achievement.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Certificate
+                </a>
+              </Button>
             </CardContent>
           </Card>
         ))}
