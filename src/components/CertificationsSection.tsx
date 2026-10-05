@@ -20,7 +20,7 @@ const CertificationCard = ({ certification, index }: { certification: Certificat
     <Card className="w-full h-[260px] card-hover gradient-bg group">
       <CardContent className="flex flex-col h-full p-6">
         <div className="flex flex-col items-center text-center"><div className="text-4xl mb-4">{certification.icon}</div><h3 className="font-medium leading-tight">{certification.title}</h3><p className="text-sm text-muted-foreground mt-3">{certification.issuer}</p></div>
-        {certification.url && <div className="mt-auto flex justify-end"><a href={certification.url} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground/80 opacity-0 translate-y-1 pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto focus:opacity-100 focus:translate-y-0 focus:pointer-events-auto">View Credential →</a></div>}
+        {certification.url && <div className="mt-auto flex justify-end"><a href={certification.url} target="_blank" rel="noopener noreferrer" className="min-h-11 inline-flex items-center px-2 text-xs text-muted-foreground/80 opacity-100 sm:opacity-0 sm:translate-y-1 sm:pointer-events-none transition-all duration-200 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 sm:group-hover:pointer-events-auto focus:opacity-100 focus:translate-y-0 focus:pointer-events-auto">View Credential →</a></div>}
       </CardContent>
     </Card>
   </motion.div>;
