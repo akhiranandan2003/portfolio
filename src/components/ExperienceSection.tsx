@@ -6,12 +6,11 @@ import { FileText } from "lucide-react";
 interface ExperienceCardProps {
   title: string;
   company: string;
-  description: string;
   certificateUrl?: string;
   index: number;
 }
 
-const ExperienceCard = ({ title, company, description, certificateUrl, index }: ExperienceCardProps) => {
+const ExperienceCard = ({ title, company, certificateUrl, index }: ExperienceCardProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -47,7 +46,6 @@ const ExperienceCard = ({ title, company, description, certificateUrl, index }: 
 
         <CardContent className="flex-1">
           <p className="text-muted-foreground font-medium">{company}</p>
-          <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{description}</p>
         </CardContent>
 
         {certificateUrl && (
@@ -74,7 +72,6 @@ const ExperienceSection = () => {
         <ExperienceCard
           title="AI & Machine Learning Intern"
           company="Infosys Springboard"
-          description="Developed SwiftVisa, an AI-powered visa eligibility screening system, applying machine learning and AI techniques to automate eligibility assessment."
           certificateUrl="https://drive.google.com/file/d/1n-N_gRI6PtyGeKRxwKudNfX-f3qESvmz/view?usp=sharing"
           index={0}
         />
@@ -82,7 +79,6 @@ const ExperienceSection = () => {
         <ExperienceCard
           title="Full Stack Development Intern"
           company="SmartBridge Foundation"
-          description="Built full stack application components using frontend, backend APIs, and MongoDB, with a focus on integrating application features end to end."
           certificateUrl="https://drive.google.com/file/d/1FMm4WXQjLEJyAP0jOKieI0LsdSfwyNrU/view?usp=sharing"
           index={1}
         />
@@ -90,7 +86,6 @@ const ExperienceSection = () => {
         <ExperienceCard
           title="Salesforce Developer Intern"
           company="SmartBridge Foundation"
-          description="Worked with Salesforce development concepts and platform components to build and configure Salesforce-based solutions."
           certificateUrl="https://drive.google.com/file/d/1JZ0cdQOYt2N2hD9g4eeLs0648kbTqEIS/view?usp=drive_link"
           index={2}
         />
@@ -98,7 +93,6 @@ const ExperienceSection = () => {
         <ExperienceCard
           title="Green Intern (Salesforce & Tableau)"
           company="1M1B Foundation"
-          description="Worked with Salesforce and Tableau in a technology-focused internship, applying platform and data visualization concepts to project activities."
           certificateUrl="https://drive.google.com/file/d/1JUbR_Ho-_RsfRott4arEyS80hWLNvvG9/view?usp=sharing"
           index={3}
         />
@@ -106,7 +100,6 @@ const ExperienceSection = () => {
         <ExperienceCard
           title="AI & Cloud Intern"
           company="Edunet Foundation"
-          description="Worked on AI and cloud-focused project activities, applying core concepts to practical technology tasks."
           certificateUrl="https://drive.google.com/file/d/1j5FOspv-91se2KivBfk4YptNW0eulqJM/view?usp=drive_link"
           index={4}
         />
@@ -114,7 +107,6 @@ const ExperienceSection = () => {
         <ExperienceCard
           title="Data Analytics Intern"
           company="Vodafone Idea Foundation"
-          description="Analyzed datasets to identify patterns and insights, supporting data-driven analysis and interpretation."
           certificateUrl="https://drive.google.com/file/d/1JEQBueLFJZCYnduKTYPTOTZK94_5HuHn/view?usp=sharing"
           index={5}
         />
@@ -122,7 +114,6 @@ const ExperienceSection = () => {
         <ExperienceCard
           title="Front End Development Intern"
           company="Edunet Foundation (IBM SkillsBuild)"
-          description="Developed responsive web interfaces using front-end technologies, focusing on structured layouts and user-friendly experiences."
           certificateUrl="/certificates/Edunet_Foundation_FED_Internship_Certificate.pdf"
           index={6}
         />
@@ -130,7 +121,6 @@ const ExperienceSection = () => {
         <ExperienceCard
           title="Java Programming Intern"
           company="KITSW — CSE (Networks) & C-PRE"
-          description="Developed Java programming solutions through practical coding tasks, strengthening object-oriented programming and application development skills."
           certificateUrl="https://drive.google.com/file/d/1OsLZFBO_TYbHGvpLT4AL4mMVkpSRG2lt/view?usp=drive_link"
           index={7}
         />
