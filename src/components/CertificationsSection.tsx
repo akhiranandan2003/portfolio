@@ -96,7 +96,7 @@ const CertificationCard = ({ certification, index }: { certification: Certificat
       {certification.url ? (
         <Card className="w-full card-hover gradient-bg group overflow-hidden">
           {certification.url.startsWith("/") && (
-            <div className="h-[150px] w-full bg-white overflow-hidden border-b">
+            <div className="h-[170px] w-full bg-white overflow-hidden border-b">
               {certification.url.toLowerCase().endsWith(".pdf") ? (
                 <iframe
                   src={certification.url}
@@ -120,9 +120,9 @@ const CertificationCard = ({ certification, index }: { certification: Certificat
               href={certification.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-primary hover:underline"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
             >
-              View Certificate →
+              Preview Certificate →
             </a>
           </CardContent>
         </Card>
