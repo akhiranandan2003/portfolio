@@ -18,65 +18,32 @@ const Navbar = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 50);
-
       const sections = document.querySelectorAll('section[id]');
-
       sections.forEach((section) => {
         const sectionTop = (section as HTMLElement).offsetTop - 100;
         const sectionHeight = (section as HTMLElement).offsetHeight;
-
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
           setActiveSection(section.getAttribute('id') || "");
         }
       });
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header
-      className={`
-        fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6
-        ${isScrolled ? 'bg-background/85 shadow-lg backdrop-blur-xl border-b border-border/70' : 'bg-transparent'}
-      `}
-    >
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 ${isScrolled ? 'bg-white/85 shadow-sm backdrop-blur-xl border-b border-primary/10' : 'bg-transparent'}`}>
       <nav className="container max-w-6xl mx-auto flex justify-between items-center">
-        <a href="#" className="text-xl font-bold">
-          <span className="gradient-text">Akhira Nandan Thota</span>
-        </a>
-
+        <a href="#" className="text-xl font-bold"><span className="gradient-text">Akhira Nandan Thota</span></a>
         <div className="hidden md:flex items-center space-x-1">
           {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`
-                px-3 py-2 rounded-md text-sm font-medium transition-all
-                ${activeSection === item.href.replace('#', '')
-                  ? 'text-primary'
-                  : 'text-gray-600 hover:text-primary'}
-              `}
-            >
+            <a key={item.href} href={item.href} className={`px-3 py-2 rounded-md text-sm font-medium transition-all ${activeSection === item.href.replace('#', '') ? 'text-primary' : 'text-gray-600 hover:text-primary'}`}>
               {item.label}
             </a>
           ))}
         </div>
-
-        <Button
-          variant="default"
-          size="sm"
-          className="hover:animate-ripple shadow-lg shadow-primary/10"
-          asChild
-        >
-          <a
-            href="/Akhira_Nandan_Thota_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
+        <Button variant="default" size="sm" className="hover:animate-ripple shadow-md shadow-primary/15" asChild>
+          <a href="/Akhira_Nandan_Thota_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
         </Button>
       </nav>
     </header>
