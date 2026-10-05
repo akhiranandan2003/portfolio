@@ -148,8 +148,8 @@ const ExperienceSection = () => {
           index={6}
         />
         <ExperienceCard 
-          title="Student Summer Internship Program (SSIP) — Industry-Oriented Java Programming" 
-          company="Kakatiya Institute of Technology & Science (KITSW) — CSE (Networks) Department in collaboration with C-PRE" 
+          title="Java Programming Intern" 
+          company="KITSW — CSE (Networks) & C-PRE" 
           index={7}
         />
       </div>
