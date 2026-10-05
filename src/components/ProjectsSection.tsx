@@ -29,7 +29,6 @@ const projects: Project[] = [
     title: "Personal Developer Portfolio",
     description: "Responsive developer portfolio showcasing my software engineering skills, projects, internships, certifications, achievements, and technical experience.",
     githubUrl: "https://github.com/akhiranandan2003/portfolio",
-    liveUrl: "https://akhiranandan.tech",
     tags: ["React", "TypeScript", "Tailwind CSS"]
   }
 ];
