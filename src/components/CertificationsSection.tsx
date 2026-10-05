@@ -26,19 +26,19 @@ const certifications: Certification[] = [
   {
     title: "Salesforce Certified Agentforce Specialist",
     issuer: "Salesforce",
-    url: "https://drive.google.com/file/d/1jtDv7AJV9kzkyYZpNNEnjapYQqSxX52P/view?usp=drive_link",
+    url: "https://drive.google.com/file/d/1jtDv7AJV9kzkyYZpNNEnjapYQqSxX52P/preview",
     icon: "🎓"
   },
   {
     title: "Oracle Cloud Infrastructure Data Science Professional",
     issuer: "Oracle",
-    url: "https://drive.google.com/file/d/1TGdBDpeUyKkVvuJIEp2KB0S-CFaU3hPF/view?usp=drive_link",
+    url: "https://drive.google.com/file/d/1TGdBDpeUyKkVvuJIEp2KB0S-CFaU3hPF/preview",
     icon: "📊"
   },
   {
     title: "Oracle Cloud Infrastructure Generative AI Professional",
     issuer: "Oracle",
-    url: "https://drive.google.com/file/d/1tXz3mV9FdZHjWKluI1AGYWkMTED3LKln/view?usp=drive_link",
+    url: "https://drive.google.com/file/d/1tXz3mV9FdZHjWKluI1AGYWkMTED3LKln/preview",
     icon: "🤖"
   },
   {
@@ -95,23 +95,28 @@ const CertificationCard = ({ certification, index }: { certification: Certificat
     >
       {certification.url ? (
         <Card className="w-full card-hover gradient-bg group overflow-hidden">
-          {certification.url.startsWith("/") && (
-            <div className="h-[170px] w-full bg-white overflow-hidden border-b">
-              {certification.url.toLowerCase().endsWith(".pdf") ? (
-                <iframe
-                  src={certification.url}
-                  title={certification.title}
-                  className="w-full h-full"
-                />
-              ) : (
-                <img
-                  src={certification.url}
-                  alt={certification.title}
-                  className="w-full h-full object-contain"
-                />
-              )}
-            </div>
-          )}
+          <div className="h-[170px] w-full bg-white overflow-hidden border-b">
+            {certification.url.startsWith("https://drive.google.com/") ? (
+              <iframe
+                src={certification.url}
+                title={certification.title}
+                className="w-full h-full"
+                allow="autoplay"
+              />
+            ) : certification.url.toLowerCase().endsWith(".pdf") ? (
+              <iframe
+                src={certification.url}
+                title={certification.title}
+                className="w-full h-full"
+              />
+            ) : (
+              <img
+                src={certification.url}
+                alt={certification.title}
+                className="w-full h-full object-contain"
+              />
+            )}
+          </div>
           <CardContent className="flex flex-col items-center justify-center p-4">
             <div className="text-3xl mb-2">{certification.icon}</div>
             <h3 className="font-medium text-center">{certification.title}</h3>
