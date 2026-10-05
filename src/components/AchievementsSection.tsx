@@ -36,6 +36,14 @@ const AchievementsSection = () => {
               <p className="text-muted-foreground mb-4">
                 {achievement.description}
               </p>
+              <div className="mb-4 overflow-hidden rounded-lg border bg-muted/20">
+                <img
+                  src={achievement.certificateUrl}
+                  alt={`${achievement.title} certificate`}
+                  className="w-full h-48 object-contain bg-white"
+                  loading="lazy"
+                />
+              </div>
               <Button variant="secondary" size="sm" asChild>
                 <a
                   href={achievement.certificateUrl}
