@@ -14,11 +14,13 @@ const certifications: Certification[] = [
   {
     title: "AI Skills Passport",
     issuer: "EY & Microsoft",
+    url: "/certificates/ey ai skil;s certificate.pdf",
     icon: "🤖"
   },
   {
     title: "Python 101 for Data Science (PY0101EN)",
     issuer: "IBM / Cognitive Class",
+    url: "/certificates/IBM PY0101EN Certificate _ Cognitive Class.pdf",
     icon: "🐍"
   },
   {
@@ -92,24 +94,38 @@ const CertificationCard = ({ certification, index }: { certification: Certificat
       viewport={{ once: false }}
     >
       {certification.url ? (
-        <a 
-          href={certification.url} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="block h-[200px]"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Card className="w-full h-full card-hover gradient-bg group">
-            <CardContent className="flex flex-col items-center justify-center h-full p-6">
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{certification.icon}</div>
-              <h3 className="font-medium text-center group-hover:text-primary transition-colors">{certification.title}</h3>
-              <p className="text-sm text-muted-foreground text-center">{certification.issuer}</p>
-              <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity text-xs text-primary">
-                View credential →
-              </div>
-            </CardContent>
-          </Card>
-        </a>
+        <Card className="w-full card-hover gradient-bg group overflow-hidden">
+          {certification.url.startsWith("/") && (
+            <div className="h-[150px] w-full bg-white overflow-hidden border-b">
+              {certification.url.toLowerCase().endsWith(".pdf") ? (
+                <iframe
+                  src={certification.url}
+                  title={certification.title}
+                  className="w-full h-full"
+                />
+              ) : (
+                <img
+                  src={certification.url}
+                  alt={certification.title}
+                  className="w-full h-full object-contain"
+                />
+              )}
+            </div>
+          )}
+          <CardContent className="flex flex-col items-center justify-center p-4">
+            <div className="text-3xl mb-2">{certification.icon}</div>
+            <h3 className="font-medium text-center">{certification.title}</h3>
+            <p className="text-sm text-muted-foreground text-center mb-3">{certification.issuer}</p>
+            <a
+              href={certification.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-primary hover:underline"
+            >
+              View Certificate →
+            </a>
+          </CardContent>
+        </Card>
       ) : (
         <Card className="w-full h-[200px] card-hover gradient-bg group">
           <CardContent className="flex flex-col items-center justify-center h-full p-6">
