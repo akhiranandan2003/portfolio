@@ -2,51 +2,32 @@ import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText } from "lucide-react";
 
-interface ExperienceCardProps {
-  title: string;
-  company: string;
-  certificateUrl?: string;
-  index: number;
-}
+interface ExperienceCardProps { title: string; company: string; certificateUrl?: string; index: number; }
 
 const ExperienceCard = ({ title, company, certificateUrl, index }: ExperienceCardProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => setIsVisible(true), index * 100);
-        observer.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) { setTimeout(() => setIsVisible(true), index * 100); observer.unobserve(entry.target); }
     }, { threshold: 0.2 });
-
     if (cardRef.current) observer.observe(cardRef.current);
     return () => { if (cardRef.current) observer.unobserve(cardRef.current); };
   }, [index]);
-
   return (
     <div ref={cardRef} className={`transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
       <Card className="h-full flex flex-col card-hover">
-        <CardHeader>
-          <CardTitle className="text-xl leading-tight">{title}</CardTitle>
-        </CardHeader>
-        <CardContent className="flex-1">
-          <p className="text-muted-foreground font-medium">{company}</p>
-        </CardContent>
-        {certificateUrl && (
-          <CardFooter className="pt-0 justify-end">
-            <a href={certificateUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <FileText className="mr-1.5 h-3.5 w-3.5" />
-              View Credential →
-            </a>
-          </CardFooter>
-        )}
+        <CardHeader><CardTitle className="text-xl leading-tight">{title}</CardTitle></CardHeader>
+        <CardContent className="flex-1"><p className="text-muted-foreground font-medium">{company}</p></CardContent>
+        {certificateUrl && <CardFooter className="pt-0 justify-end">
+          <a href={certificateUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-xs text-muted-foreground/80 opacity-0 translate-y-1 pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto focus:opacity-100 focus:translate-y-0 focus:pointer-events-auto">
+            <FileText className="mr-1 h-3.5 w-3.5" />View Credential →
+          </a>
+        </CardFooter>}
       </Card>
     </div>
   );
 };
-
 const ExperienceSection = () => (
   <section id="experience" className="section-container">
     <h2 className="section-title text-center">Experience</h2>
@@ -62,5 +43,4 @@ const ExperienceSection = () => (
     </div>
   </section>
 );
-
 export default ExperienceSection;
