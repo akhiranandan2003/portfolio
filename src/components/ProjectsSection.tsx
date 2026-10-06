@@ -7,7 +7,6 @@ interface Project { title:string; description:string; githubUrl:string; liveUrl?
 
 const projects: Project[] = [
   { title:"SwiftVisa – AI Visa Eligibility Screening Agent", description:"AI-powered visa eligibility screening system using Retrieval-Augmented Generation (RAG), integrating LangChain with the Google Gemini API and semantic document retrieval for accurate, rule-validated eligibility assessments.", githubUrl:"https://github.com/akhiranandan2003/ai-powered-visa-eligibility-screening", liveUrl:"https://akhiranandan2003.github.io/ai-powered-visa-eligibility-screening/", tags:["RAG","LangChain","Gemini API"] },
-  { title:"PulseBoard – Personalized Content Dashboard", description:"Responsive personalized content dashboard built for an SDE frontend assignment using Next.js, TypeScript, Redux Toolkit, API integration, debounced search, favorites, drag-and-drop reordering, dark mode, and testing.", githubUrl:"https://github.com/akhiranandan2003/personalized-content-dashboard", liveUrl:"https://pulseboard-dashboard-dmk6ph3jw-thota-akhira-nandans-projects.vercel.app/", tags:["Next.js","TypeScript","Redux Toolkit","APIs"] },
   { title:"Arduino Based Fire Fighting Robot", description:"Autonomous fire-fighting robot integrating flame sensors, Arduino Uno, motor drivers, and water pump modules with sensor-based navigation and automatic suppression logic.", githubUrl:"https://github.com/akhiranandan2003/Arduino-Based-Fire-Fighting-Robot", tags:["Arduino","Robotics","IoT"] }
 ];
 
